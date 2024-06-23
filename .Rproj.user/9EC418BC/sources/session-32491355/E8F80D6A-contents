@@ -1,0 +1,52 @@
+---
+title: "Analysis_Module3"
+format: html
+editor: visual
+---
+
+## Install DT package to make data tables interactive
+
+
+```{r}
+install.packages("DT")
+
+# Load library and example dataset:
+library(DT)
+data(iris)
+
+# Make a table
+datatable(iris, filter = "top")
+```
+
+# Make static tables
+
+```{r}
+# Load the knitr library
+library(knitr)
+library(tidyverse)
+# Compute some result
+bill_length_per_specie <- data %>% group_by(species) %>% 
+  summarise(average_bill_length = mean(bill_length_mm, na.rm = TRUE))
+
+# Display in the Quarto report
+kable(bill_length_per_specie)
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+install.packages("plotly")
+
+library(ggplot2)
+library(gapminder)
+
+p <- gapminder %>%
+  filter(year==1977) %>%
+  ggplot( aes(gdpPercap, lifeExp, size = pop, color=continent)) +
+  geom_point() +
+  theme_bw()
+
+library(plotly)
+ggplotly(p)
+
+```

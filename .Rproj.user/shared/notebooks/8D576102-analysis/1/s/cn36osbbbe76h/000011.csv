@@ -1,0 +1,8 @@
+"0","# Summary"
+"0","# summary(data)"
+"0",""
+"0","# Calculating mean bill length for different species and islands using dplyr"
+"0","data %>%"
+"0","  filter(species == ""Adelie"") %>%"
+"0","  group_by(island) %>%"
+"0","  summarize(mean_bill_length = round(mean(bill_length_mm, na.rm = TRUE), 2))"

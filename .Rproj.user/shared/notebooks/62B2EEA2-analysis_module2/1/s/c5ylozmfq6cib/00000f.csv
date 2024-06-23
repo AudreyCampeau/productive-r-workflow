@@ -1,0 +1,14 @@
+"0","p=data %>%
+  ggplot(
+    aes(x = bill_length_mm, y = bill_depth_mm)
+  ) +
+    geom_point(color=""#69b3a2"") +
+    labs(
+      x = ""Bill Length (mm)"",
+      y = ""Bill Depth (mm)"",
+      title = paste(""Surprising relationship?"")
+    ) + 
+  theme_ipsum()
+"
+"2","Error in theme_ipsum() : could not find function ""theme_ipsum""
+"
